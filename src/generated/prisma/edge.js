@@ -144,6 +144,10 @@ const config = {
         "fromEnvVar": null,
         "value": "darwin-arm64",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -161,16 +165,17 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres:123456@localhost:5432/sahibindenclone?schema=public"
+        "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       Int       @id @default(autoincrement())\n  name     String\n  email    String    @unique\n  password String\n  products Product[]\n}\n\nmodel Product {\n  id          String @id @default(uuid())\n  authorId    Int\n  name        String\n  description String\n  price       Float\n  author      User   @relation(fields: [authorId], references: [id])\n}\n",
-  "inlineSchemaHash": "bf7339b785e48c8cfa775bb8479cdb989e8e7a554e71c4d94e0c5e3472a02ae7",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../src/generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       Int       @id @default(autoincrement())\n  name     String\n  email    String    @unique\n  password String\n  products Product[]\n}\n\nmodel Product {\n  id          String @id @default(uuid())\n  authorId    Int\n  name        String\n  description String\n  price       Float\n  author      User   @relation(fields: [authorId], references: [id])\n}\n",
+  "inlineSchemaHash": "7c797da4d0a2c45bdc06c6a80863420dc876f23a8b60b072f7d4464ce3b8a467",
   "copyEngine": true
 }
 config.dirname = '/'
