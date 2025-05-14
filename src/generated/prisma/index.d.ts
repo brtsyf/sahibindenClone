@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model Product
+ * Model Advert
  * 
  */
-export type Product = $Result.DefaultSelection<Prisma.$ProductPayload>
+export type Advert = $Result.DefaultSelection<Prisma.$AdvertPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -160,14 +160,14 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.product`: Exposes CRUD operations for the **Product** model.
+   * `prisma.advert`: Exposes CRUD operations for the **Advert** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Products
-    * const products = await prisma.product.findMany()
+    * // Fetch zero or more Adverts
+    * const adverts = await prisma.advert.findMany()
     * ```
     */
-  get product(): Prisma.ProductDelegate<ExtArgs, ClientOptions>;
+  get advert(): Prisma.AdvertDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -609,7 +609,7 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    Product: 'Product'
+    Advert: 'Advert'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +628,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "product"
+      modelProps: "user" | "advert"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -706,77 +706,77 @@ export namespace Prisma {
           }
         }
       }
-      Product: {
-        payload: Prisma.$ProductPayload<ExtArgs>
-        fields: Prisma.ProductFieldRefs
+      Advert: {
+        payload: Prisma.$AdvertPayload<ExtArgs>
+        fields: Prisma.AdvertFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ProductFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload> | null
+            args: Prisma.AdvertFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ProductFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           findFirst: {
-            args: Prisma.ProductFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload> | null
+            args: Prisma.AdvertFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ProductFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           findMany: {
-            args: Prisma.ProductFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+            args: Prisma.AdvertFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>[]
           }
           create: {
-            args: Prisma.ProductCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           createMany: {
-            args: Prisma.ProductCreateManyArgs<ExtArgs>
+            args: Prisma.AdvertCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.ProductCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+            args: Prisma.AdvertCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>[]
           }
           delete: {
-            args: Prisma.ProductDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           update: {
-            args: Prisma.ProductUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           deleteMany: {
-            args: Prisma.ProductDeleteManyArgs<ExtArgs>
+            args: Prisma.AdvertDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ProductUpdateManyArgs<ExtArgs>
+            args: Prisma.AdvertUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.ProductUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+            args: Prisma.AdvertUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>[]
           }
           upsert: {
-            args: Prisma.ProductUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+            args: Prisma.AdvertUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdvertPayload>
           }
           aggregate: {
-            args: Prisma.ProductAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateProduct>
+            args: Prisma.AdvertAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAdvert>
           }
           groupBy: {
-            args: Prisma.ProductGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ProductGroupByOutputType>[]
+            args: Prisma.AdvertGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AdvertGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ProductCountArgs<ExtArgs>
-            result: $Utils.Optional<ProductCountAggregateOutputType> | number
+            args: Prisma.AdvertCountArgs<ExtArgs>
+            result: $Utils.Optional<AdvertCountAggregateOutputType> | number
           }
         }
       }
@@ -865,7 +865,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    product?: ProductOmit
+    advert?: AdvertOmit
   }
 
   /* Types for Logging */
@@ -960,11 +960,11 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    products: number
+    adverts: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    products?: boolean | UserCountOutputTypeCountProductsArgs
+    adverts?: boolean | UserCountOutputTypeCountAdvertsArgs
   }
 
   // Custom InputTypes
@@ -981,8 +981,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountProductsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProductWhereInput
+  export type UserCountOutputTypeCountAdvertsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AdvertWhereInput
   }
 
 
@@ -1180,7 +1180,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
-    products?: boolean | User$productsArgs<ExtArgs>
+    adverts?: boolean | User$advertsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1207,7 +1207,7 @@ export namespace Prisma {
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    products?: boolean | User$productsArgs<ExtArgs>
+    adverts?: boolean | User$advertsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1216,7 +1216,7 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      products: Prisma.$ProductPayload<ExtArgs>[]
+      adverts: Prisma.$AdvertPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -1617,7 +1617,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    products<T extends User$productsArgs<ExtArgs> = {}>(args?: Subset<T, User$productsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    adverts<T extends User$advertsArgs<ExtArgs> = {}>(args?: Subset<T, User$advertsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2039,27 +2039,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.products
+   * User.adverts
    */
-  export type User$productsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$advertsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
-    where?: ProductWhereInput
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
-    cursor?: ProductWhereUniqueInput
+    include?: AdvertInclude<ExtArgs> | null
+    where?: AdvertWhereInput
+    orderBy?: AdvertOrderByWithRelationInput | AdvertOrderByWithRelationInput[]
+    cursor?: AdvertWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+    distinct?: AdvertScalarFieldEnum | AdvertScalarFieldEnum[]
   }
 
   /**
@@ -2082,46 +2082,44 @@ export namespace Prisma {
 
 
   /**
-   * Model Product
+   * Model Advert
    */
 
-  export type AggregateProduct = {
-    _count: ProductCountAggregateOutputType | null
-    _avg: ProductAvgAggregateOutputType | null
-    _sum: ProductSumAggregateOutputType | null
-    _min: ProductMinAggregateOutputType | null
-    _max: ProductMaxAggregateOutputType | null
+  export type AggregateAdvert = {
+    _count: AdvertCountAggregateOutputType | null
+    _avg: AdvertAvgAggregateOutputType | null
+    _sum: AdvertSumAggregateOutputType | null
+    _min: AdvertMinAggregateOutputType | null
+    _max: AdvertMaxAggregateOutputType | null
   }
 
-  export type ProductAvgAggregateOutputType = {
-    authorId: number | null
+  export type AdvertAvgAggregateOutputType = {
     price: number | null
   }
 
-  export type ProductSumAggregateOutputType = {
-    authorId: number | null
+  export type AdvertSumAggregateOutputType = {
     price: number | null
   }
 
-  export type ProductMinAggregateOutputType = {
+  export type AdvertMinAggregateOutputType = {
     id: string | null
-    authorId: number | null
+    authorEmail: string | null
     name: string | null
     description: string | null
     price: number | null
   }
 
-  export type ProductMaxAggregateOutputType = {
+  export type AdvertMaxAggregateOutputType = {
     id: string | null
-    authorId: number | null
+    authorEmail: string | null
     name: string | null
     description: string | null
     price: number | null
   }
 
-  export type ProductCountAggregateOutputType = {
+  export type AdvertCountAggregateOutputType = {
     id: number
-    authorId: number
+    authorEmail: number
     name: number
     description: number
     price: number
@@ -2129,341 +2127,339 @@ export namespace Prisma {
   }
 
 
-  export type ProductAvgAggregateInputType = {
-    authorId?: true
+  export type AdvertAvgAggregateInputType = {
     price?: true
   }
 
-  export type ProductSumAggregateInputType = {
-    authorId?: true
+  export type AdvertSumAggregateInputType = {
     price?: true
   }
 
-  export type ProductMinAggregateInputType = {
+  export type AdvertMinAggregateInputType = {
     id?: true
-    authorId?: true
+    authorEmail?: true
     name?: true
     description?: true
     price?: true
   }
 
-  export type ProductMaxAggregateInputType = {
+  export type AdvertMaxAggregateInputType = {
     id?: true
-    authorId?: true
+    authorEmail?: true
     name?: true
     description?: true
     price?: true
   }
 
-  export type ProductCountAggregateInputType = {
+  export type AdvertCountAggregateInputType = {
     id?: true
-    authorId?: true
+    authorEmail?: true
     name?: true
     description?: true
     price?: true
     _all?: true
   }
 
-  export type ProductAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Product to aggregate.
+     * Filter which Advert to aggregate.
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Products to fetch.
+     * Determine the order of Adverts to fetch.
      */
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    orderBy?: AdvertOrderByWithRelationInput | AdvertOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ProductWhereUniqueInput
+    cursor?: AdvertWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Products from the position of the cursor.
+     * Take `±n` Adverts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Products.
+     * Skip the first `n` Adverts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Products
+     * Count returned Adverts
     **/
-    _count?: true | ProductCountAggregateInputType
+    _count?: true | AdvertCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: ProductAvgAggregateInputType
+    _avg?: AdvertAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: ProductSumAggregateInputType
+    _sum?: AdvertSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: ProductMinAggregateInputType
+    _min?: AdvertMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: ProductMaxAggregateInputType
+    _max?: AdvertMaxAggregateInputType
   }
 
-  export type GetProductAggregateType<T extends ProductAggregateArgs> = {
-        [P in keyof T & keyof AggregateProduct]: P extends '_count' | 'count'
+  export type GetAdvertAggregateType<T extends AdvertAggregateArgs> = {
+        [P in keyof T & keyof AggregateAdvert]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateProduct[P]>
-      : GetScalarType<T[P], AggregateProduct[P]>
+        : GetScalarType<T[P], AggregateAdvert[P]>
+      : GetScalarType<T[P], AggregateAdvert[P]>
   }
 
 
 
 
-  export type ProductGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProductWhereInput
-    orderBy?: ProductOrderByWithAggregationInput | ProductOrderByWithAggregationInput[]
-    by: ProductScalarFieldEnum[] | ProductScalarFieldEnum
-    having?: ProductScalarWhereWithAggregatesInput
+  export type AdvertGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AdvertWhereInput
+    orderBy?: AdvertOrderByWithAggregationInput | AdvertOrderByWithAggregationInput[]
+    by: AdvertScalarFieldEnum[] | AdvertScalarFieldEnum
+    having?: AdvertScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: ProductCountAggregateInputType | true
-    _avg?: ProductAvgAggregateInputType
-    _sum?: ProductSumAggregateInputType
-    _min?: ProductMinAggregateInputType
-    _max?: ProductMaxAggregateInputType
+    _count?: AdvertCountAggregateInputType | true
+    _avg?: AdvertAvgAggregateInputType
+    _sum?: AdvertSumAggregateInputType
+    _min?: AdvertMinAggregateInputType
+    _max?: AdvertMaxAggregateInputType
   }
 
-  export type ProductGroupByOutputType = {
+  export type AdvertGroupByOutputType = {
     id: string
-    authorId: number
+    authorEmail: string
     name: string
     description: string
     price: number
-    _count: ProductCountAggregateOutputType | null
-    _avg: ProductAvgAggregateOutputType | null
-    _sum: ProductSumAggregateOutputType | null
-    _min: ProductMinAggregateOutputType | null
-    _max: ProductMaxAggregateOutputType | null
+    _count: AdvertCountAggregateOutputType | null
+    _avg: AdvertAvgAggregateOutputType | null
+    _sum: AdvertSumAggregateOutputType | null
+    _min: AdvertMinAggregateOutputType | null
+    _max: AdvertMaxAggregateOutputType | null
   }
 
-  type GetProductGroupByPayload<T extends ProductGroupByArgs> = Prisma.PrismaPromise<
+  type GetAdvertGroupByPayload<T extends AdvertGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<ProductGroupByOutputType, T['by']> &
+      PickEnumerable<AdvertGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof ProductGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof AdvertGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], ProductGroupByOutputType[P]>
-            : GetScalarType<T[P], ProductGroupByOutputType[P]>
+              : GetScalarType<T[P], AdvertGroupByOutputType[P]>
+            : GetScalarType<T[P], AdvertGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AdvertSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    authorId?: boolean
+    authorEmail?: boolean
     name?: boolean
     description?: boolean
     price?: boolean
     author?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["product"]>
+  }, ExtArgs["result"]["advert"]>
 
-  export type ProductSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AdvertSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    authorId?: boolean
+    authorEmail?: boolean
     name?: boolean
     description?: boolean
     price?: boolean
     author?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["product"]>
+  }, ExtArgs["result"]["advert"]>
 
-  export type ProductSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AdvertSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    authorId?: boolean
+    authorEmail?: boolean
     name?: boolean
     description?: boolean
     price?: boolean
     author?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["product"]>
+  }, ExtArgs["result"]["advert"]>
 
-  export type ProductSelectScalar = {
+  export type AdvertSelectScalar = {
     id?: boolean
-    authorId?: boolean
+    authorEmail?: boolean
     name?: boolean
     description?: boolean
     price?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "authorId" | "name" | "description" | "price", ExtArgs["result"]["product"]>
-  export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "authorEmail" | "name" | "description" | "price", ExtArgs["result"]["advert"]>
+  export type AdvertInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     author?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type ProductIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     author?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type ProductIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     author?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $ProductPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Product"
+  export type $AdvertPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Advert"
     objects: {
       author: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      authorId: number
+      authorEmail: string
       name: string
       description: string
       price: number
-    }, ExtArgs["result"]["product"]>
+    }, ExtArgs["result"]["advert"]>
     composites: {}
   }
 
-  type ProductGetPayload<S extends boolean | null | undefined | ProductDefaultArgs> = $Result.GetResult<Prisma.$ProductPayload, S>
+  type AdvertGetPayload<S extends boolean | null | undefined | AdvertDefaultArgs> = $Result.GetResult<Prisma.$AdvertPayload, S>
 
-  type ProductCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ProductFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ProductCountAggregateInputType | true
+  type AdvertCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<AdvertFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AdvertCountAggregateInputType | true
     }
 
-  export interface ProductDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Product'], meta: { name: 'Product' } }
+  export interface AdvertDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Advert'], meta: { name: 'Advert' } }
     /**
-     * Find zero or one Product that matches the filter.
-     * @param {ProductFindUniqueArgs} args - Arguments to find a Product
+     * Find zero or one Advert that matches the filter.
+     * @param {AdvertFindUniqueArgs} args - Arguments to find a Advert
      * @example
-     * // Get one Product
-     * const product = await prisma.product.findUnique({
+     * // Get one Advert
+     * const advert = await prisma.advert.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends ProductFindUniqueArgs>(args: SelectSubset<T, ProductFindUniqueArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends AdvertFindUniqueArgs>(args: SelectSubset<T, AdvertFindUniqueArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Product that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Advert that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ProductFindUniqueOrThrowArgs} args - Arguments to find a Product
+     * @param {AdvertFindUniqueOrThrowArgs} args - Arguments to find a Advert
      * @example
-     * // Get one Product
-     * const product = await prisma.product.findUniqueOrThrow({
+     * // Get one Advert
+     * const advert = await prisma.advert.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ProductFindUniqueOrThrowArgs>(args: SelectSubset<T, ProductFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends AdvertFindUniqueOrThrowArgs>(args: SelectSubset<T, AdvertFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Product that matches the filter.
+     * Find the first Advert that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductFindFirstArgs} args - Arguments to find a Product
+     * @param {AdvertFindFirstArgs} args - Arguments to find a Advert
      * @example
-     * // Get one Product
-     * const product = await prisma.product.findFirst({
+     * // Get one Advert
+     * const advert = await prisma.advert.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends ProductFindFirstArgs>(args?: SelectSubset<T, ProductFindFirstArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends AdvertFindFirstArgs>(args?: SelectSubset<T, AdvertFindFirstArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Product that matches the filter or
+     * Find the first Advert that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductFindFirstOrThrowArgs} args - Arguments to find a Product
+     * @param {AdvertFindFirstOrThrowArgs} args - Arguments to find a Advert
      * @example
-     * // Get one Product
-     * const product = await prisma.product.findFirstOrThrow({
+     * // Get one Advert
+     * const advert = await prisma.advert.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends ProductFindFirstOrThrowArgs>(args?: SelectSubset<T, ProductFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends AdvertFindFirstOrThrowArgs>(args?: SelectSubset<T, AdvertFindFirstOrThrowArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Products that matches the filter.
+     * Find zero or more Adverts that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {AdvertFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Products
-     * const products = await prisma.product.findMany()
+     * // Get all Adverts
+     * const adverts = await prisma.advert.findMany()
      * 
-     * // Get first 10 Products
-     * const products = await prisma.product.findMany({ take: 10 })
+     * // Get first 10 Adverts
+     * const adverts = await prisma.advert.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const productWithIdOnly = await prisma.product.findMany({ select: { id: true } })
+     * const advertWithIdOnly = await prisma.advert.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ProductFindManyArgs>(args?: SelectSubset<T, ProductFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends AdvertFindManyArgs>(args?: SelectSubset<T, AdvertFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Product.
-     * @param {ProductCreateArgs} args - Arguments to create a Product.
+     * Create a Advert.
+     * @param {AdvertCreateArgs} args - Arguments to create a Advert.
      * @example
-     * // Create one Product
-     * const Product = await prisma.product.create({
+     * // Create one Advert
+     * const Advert = await prisma.advert.create({
      *   data: {
-     *     // ... data to create a Product
+     *     // ... data to create a Advert
      *   }
      * })
      * 
      */
-    create<T extends ProductCreateArgs>(args: SelectSubset<T, ProductCreateArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends AdvertCreateArgs>(args: SelectSubset<T, AdvertCreateArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Products.
-     * @param {ProductCreateManyArgs} args - Arguments to create many Products.
+     * Create many Adverts.
+     * @param {AdvertCreateManyArgs} args - Arguments to create many Adverts.
      * @example
-     * // Create many Products
-     * const product = await prisma.product.createMany({
+     * // Create many Adverts
+     * const advert = await prisma.advert.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends ProductCreateManyArgs>(args?: SelectSubset<T, ProductCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends AdvertCreateManyArgs>(args?: SelectSubset<T, AdvertCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Products and returns the data saved in the database.
-     * @param {ProductCreateManyAndReturnArgs} args - Arguments to create many Products.
+     * Create many Adverts and returns the data saved in the database.
+     * @param {AdvertCreateManyAndReturnArgs} args - Arguments to create many Adverts.
      * @example
-     * // Create many Products
-     * const product = await prisma.product.createManyAndReturn({
+     * // Create many Adverts
+     * const advert = await prisma.advert.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Products and only return the `id`
-     * const productWithIdOnly = await prisma.product.createManyAndReturn({
+     * // Create many Adverts and only return the `id`
+     * const advertWithIdOnly = await prisma.advert.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2473,28 +2469,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends ProductCreateManyAndReturnArgs>(args?: SelectSubset<T, ProductCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends AdvertCreateManyAndReturnArgs>(args?: SelectSubset<T, AdvertCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Product.
-     * @param {ProductDeleteArgs} args - Arguments to delete one Product.
+     * Delete a Advert.
+     * @param {AdvertDeleteArgs} args - Arguments to delete one Advert.
      * @example
-     * // Delete one Product
-     * const Product = await prisma.product.delete({
+     * // Delete one Advert
+     * const Advert = await prisma.advert.delete({
      *   where: {
-     *     // ... filter to delete one Product
+     *     // ... filter to delete one Advert
      *   }
      * })
      * 
      */
-    delete<T extends ProductDeleteArgs>(args: SelectSubset<T, ProductDeleteArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends AdvertDeleteArgs>(args: SelectSubset<T, AdvertDeleteArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Product.
-     * @param {ProductUpdateArgs} args - Arguments to update one Product.
+     * Update one Advert.
+     * @param {AdvertUpdateArgs} args - Arguments to update one Advert.
      * @example
-     * // Update one Product
-     * const product = await prisma.product.update({
+     * // Update one Advert
+     * const advert = await prisma.advert.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2504,30 +2500,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ProductUpdateArgs>(args: SelectSubset<T, ProductUpdateArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends AdvertUpdateArgs>(args: SelectSubset<T, AdvertUpdateArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Products.
-     * @param {ProductDeleteManyArgs} args - Arguments to filter Products to delete.
+     * Delete zero or more Adverts.
+     * @param {AdvertDeleteManyArgs} args - Arguments to filter Adverts to delete.
      * @example
-     * // Delete a few Products
-     * const { count } = await prisma.product.deleteMany({
+     * // Delete a few Adverts
+     * const { count } = await prisma.advert.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends ProductDeleteManyArgs>(args?: SelectSubset<T, ProductDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends AdvertDeleteManyArgs>(args?: SelectSubset<T, AdvertDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Products.
+     * Update zero or more Adverts.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {AdvertUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Products
-     * const product = await prisma.product.updateMany({
+     * // Update many Adverts
+     * const advert = await prisma.advert.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2537,14 +2533,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ProductUpdateManyArgs>(args: SelectSubset<T, ProductUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends AdvertUpdateManyArgs>(args: SelectSubset<T, AdvertUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Products and returns the data updated in the database.
-     * @param {ProductUpdateManyAndReturnArgs} args - Arguments to update many Products.
+     * Update zero or more Adverts and returns the data updated in the database.
+     * @param {AdvertUpdateManyAndReturnArgs} args - Arguments to update many Adverts.
      * @example
-     * // Update many Products
-     * const product = await prisma.product.updateManyAndReturn({
+     * // Update many Adverts
+     * const advert = await prisma.advert.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2553,8 +2549,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Products and only return the `id`
-     * const productWithIdOnly = await prisma.product.updateManyAndReturn({
+     * // Update zero or more Adverts and only return the `id`
+     * const advertWithIdOnly = await prisma.advert.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2567,56 +2563,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends ProductUpdateManyAndReturnArgs>(args: SelectSubset<T, ProductUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends AdvertUpdateManyAndReturnArgs>(args: SelectSubset<T, AdvertUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Product.
-     * @param {ProductUpsertArgs} args - Arguments to update or create a Product.
+     * Create or update one Advert.
+     * @param {AdvertUpsertArgs} args - Arguments to update or create a Advert.
      * @example
-     * // Update or create a Product
-     * const product = await prisma.product.upsert({
+     * // Update or create a Advert
+     * const advert = await prisma.advert.upsert({
      *   create: {
-     *     // ... data to create a Product
+     *     // ... data to create a Advert
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Product we want to update
+     *     // ... the filter for the Advert we want to update
      *   }
      * })
      */
-    upsert<T extends ProductUpsertArgs>(args: SelectSubset<T, ProductUpsertArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends AdvertUpsertArgs>(args: SelectSubset<T, AdvertUpsertArgs<ExtArgs>>): Prisma__AdvertClient<$Result.GetResult<Prisma.$AdvertPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Products.
+     * Count the number of Adverts.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductCountArgs} args - Arguments to filter Products to count.
+     * @param {AdvertCountArgs} args - Arguments to filter Adverts to count.
      * @example
-     * // Count the number of Products
-     * const count = await prisma.product.count({
+     * // Count the number of Adverts
+     * const count = await prisma.advert.count({
      *   where: {
-     *     // ... the filter for the Products we want to count
+     *     // ... the filter for the Adverts we want to count
      *   }
      * })
     **/
-    count<T extends ProductCountArgs>(
-      args?: Subset<T, ProductCountArgs>,
+    count<T extends AdvertCountArgs>(
+      args?: Subset<T, AdvertCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], ProductCountAggregateOutputType>
+          : GetScalarType<T['select'], AdvertCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Product.
+     * Allows you to perform aggregations operations on a Advert.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {AdvertAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2636,13 +2632,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends ProductAggregateArgs>(args: Subset<T, ProductAggregateArgs>): Prisma.PrismaPromise<GetProductAggregateType<T>>
+    aggregate<T extends AdvertAggregateArgs>(args: Subset<T, AdvertAggregateArgs>): Prisma.PrismaPromise<GetAdvertAggregateType<T>>
 
     /**
-     * Group by Product.
+     * Group by Advert.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductGroupByArgs} args - Group by arguments.
+     * @param {AdvertGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2657,14 +2653,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ProductGroupByArgs,
+      T extends AdvertGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ProductGroupByArgs['orderBy'] }
-        : { orderBy?: ProductGroupByArgs['orderBy'] },
+        ? { orderBy: AdvertGroupByArgs['orderBy'] }
+        : { orderBy?: AdvertGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2713,20 +2709,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ProductGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, AdvertGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAdvertGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Product model
+   * Fields of the Advert model
    */
-  readonly fields: ProductFieldRefs;
+  readonly fields: AdvertFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Product.
+   * The delegate class that acts as a "Promise-like" for Advert.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ProductClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__AdvertClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     author<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
@@ -2755,425 +2751,425 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Product model
+   * Fields of the Advert model
    */
-  interface ProductFieldRefs {
-    readonly id: FieldRef<"Product", 'String'>
-    readonly authorId: FieldRef<"Product", 'Int'>
-    readonly name: FieldRef<"Product", 'String'>
-    readonly description: FieldRef<"Product", 'String'>
-    readonly price: FieldRef<"Product", 'Float'>
+  interface AdvertFieldRefs {
+    readonly id: FieldRef<"Advert", 'String'>
+    readonly authorEmail: FieldRef<"Advert", 'String'>
+    readonly name: FieldRef<"Advert", 'String'>
+    readonly description: FieldRef<"Advert", 'String'>
+    readonly price: FieldRef<"Advert", 'Float'>
   }
     
 
   // Custom InputTypes
   /**
-   * Product findUnique
+   * Advert findUnique
    */
-  export type ProductFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter, which Product to fetch.
+     * Filter, which Advert to fetch.
      */
-    where: ProductWhereUniqueInput
+    where: AdvertWhereUniqueInput
   }
 
   /**
-   * Product findUniqueOrThrow
+   * Advert findUniqueOrThrow
    */
-  export type ProductFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter, which Product to fetch.
+     * Filter, which Advert to fetch.
      */
-    where: ProductWhereUniqueInput
+    where: AdvertWhereUniqueInput
   }
 
   /**
-   * Product findFirst
+   * Advert findFirst
    */
-  export type ProductFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter, which Product to fetch.
+     * Filter, which Advert to fetch.
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Products to fetch.
+     * Determine the order of Adverts to fetch.
      */
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    orderBy?: AdvertOrderByWithRelationInput | AdvertOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Products.
+     * Sets the position for searching for Adverts.
      */
-    cursor?: ProductWhereUniqueInput
+    cursor?: AdvertWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Products from the position of the cursor.
+     * Take `±n` Adverts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Products.
+     * Skip the first `n` Adverts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Products.
+     * Filter by unique combinations of Adverts.
      */
-    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+    distinct?: AdvertScalarFieldEnum | AdvertScalarFieldEnum[]
   }
 
   /**
-   * Product findFirstOrThrow
+   * Advert findFirstOrThrow
    */
-  export type ProductFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter, which Product to fetch.
+     * Filter, which Advert to fetch.
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Products to fetch.
+     * Determine the order of Adverts to fetch.
      */
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    orderBy?: AdvertOrderByWithRelationInput | AdvertOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Products.
+     * Sets the position for searching for Adverts.
      */
-    cursor?: ProductWhereUniqueInput
+    cursor?: AdvertWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Products from the position of the cursor.
+     * Take `±n` Adverts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Products.
+     * Skip the first `n` Adverts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Products.
+     * Filter by unique combinations of Adverts.
      */
-    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+    distinct?: AdvertScalarFieldEnum | AdvertScalarFieldEnum[]
   }
 
   /**
-   * Product findMany
+   * Advert findMany
    */
-  export type ProductFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter, which Products to fetch.
+     * Filter, which Adverts to fetch.
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Products to fetch.
+     * Determine the order of Adverts to fetch.
      */
-    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    orderBy?: AdvertOrderByWithRelationInput | AdvertOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Products.
+     * Sets the position for listing Adverts.
      */
-    cursor?: ProductWhereUniqueInput
+    cursor?: AdvertWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Products from the position of the cursor.
+     * Take `±n` Adverts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Products.
+     * Skip the first `n` Adverts.
      */
     skip?: number
-    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+    distinct?: AdvertScalarFieldEnum | AdvertScalarFieldEnum[]
   }
 
   /**
-   * Product create
+   * Advert create
    */
-  export type ProductCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * The data needed to create a Product.
+     * The data needed to create a Advert.
      */
-    data: XOR<ProductCreateInput, ProductUncheckedCreateInput>
+    data: XOR<AdvertCreateInput, AdvertUncheckedCreateInput>
   }
 
   /**
-   * Product createMany
+   * Advert createMany
    */
-  export type ProductCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Products.
+     * The data used to create many Adverts.
      */
-    data: ProductCreateManyInput | ProductCreateManyInput[]
+    data: AdvertCreateManyInput | AdvertCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Product createManyAndReturn
+   * Advert createManyAndReturn
    */
-  export type ProductCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelectCreateManyAndReturn<ExtArgs> | null
+    select?: AdvertSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
-     * The data used to create many Products.
+     * The data used to create many Adverts.
      */
-    data: ProductCreateManyInput | ProductCreateManyInput[]
+    data: AdvertCreateManyInput | AdvertCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: AdvertIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Product update
+   * Advert update
    */
-  export type ProductUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * The data needed to update a Product.
+     * The data needed to update a Advert.
      */
-    data: XOR<ProductUpdateInput, ProductUncheckedUpdateInput>
+    data: XOR<AdvertUpdateInput, AdvertUncheckedUpdateInput>
     /**
-     * Choose, which Product to update.
+     * Choose, which Advert to update.
      */
-    where: ProductWhereUniqueInput
+    where: AdvertWhereUniqueInput
   }
 
   /**
-   * Product updateMany
+   * Advert updateMany
    */
-  export type ProductUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Products.
+     * The data used to update Adverts.
      */
-    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyInput>
+    data: XOR<AdvertUpdateManyMutationInput, AdvertUncheckedUpdateManyInput>
     /**
-     * Filter which Products to update
+     * Filter which Adverts to update
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
-     * Limit how many Products to update.
+     * Limit how many Adverts to update.
      */
     limit?: number
   }
 
   /**
-   * Product updateManyAndReturn
+   * Advert updateManyAndReturn
    */
-  export type ProductUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: AdvertSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
-     * The data used to update Products.
+     * The data used to update Adverts.
      */
-    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyInput>
+    data: XOR<AdvertUpdateManyMutationInput, AdvertUncheckedUpdateManyInput>
     /**
-     * Filter which Products to update
+     * Filter which Adverts to update
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
-     * Limit how many Products to update.
+     * Limit how many Adverts to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: AdvertIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Product upsert
+   * Advert upsert
    */
-  export type ProductUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * The filter to search for the Product to update in case it exists.
+     * The filter to search for the Advert to update in case it exists.
      */
-    where: ProductWhereUniqueInput
+    where: AdvertWhereUniqueInput
     /**
-     * In case the Product found by the `where` argument doesn't exist, create a new Product with this data.
+     * In case the Advert found by the `where` argument doesn't exist, create a new Advert with this data.
      */
-    create: XOR<ProductCreateInput, ProductUncheckedCreateInput>
+    create: XOR<AdvertCreateInput, AdvertUncheckedCreateInput>
     /**
-     * In case the Product was found with the provided `where` argument, update it with this data.
+     * In case the Advert was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ProductUpdateInput, ProductUncheckedUpdateInput>
+    update: XOR<AdvertUpdateInput, AdvertUncheckedUpdateInput>
   }
 
   /**
-   * Product delete
+   * Advert delete
    */
-  export type ProductDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
     /**
-     * Filter which Product to delete.
+     * Filter which Advert to delete.
      */
-    where: ProductWhereUniqueInput
+    where: AdvertWhereUniqueInput
   }
 
   /**
-   * Product deleteMany
+   * Advert deleteMany
    */
-  export type ProductDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Products to delete
+     * Filter which Adverts to delete
      */
-    where?: ProductWhereInput
+    where?: AdvertWhereInput
     /**
-     * Limit how many Products to delete.
+     * Limit how many Adverts to delete.
      */
     limit?: number
   }
 
   /**
-   * Product without action
+   * Advert without action
    */
-  export type ProductDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AdvertDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Product
+     * Select specific fields to fetch from the Advert
      */
-    select?: ProductSelect<ExtArgs> | null
+    select?: AdvertSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Product
+     * Omit specific fields from the Advert
      */
-    omit?: ProductOmit<ExtArgs> | null
+    omit?: AdvertOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProductInclude<ExtArgs> | null
+    include?: AdvertInclude<ExtArgs> | null
   }
 
 
@@ -3201,15 +3197,15 @@ export namespace Prisma {
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const ProductScalarFieldEnum: {
+  export const AdvertScalarFieldEnum: {
     id: 'id',
-    authorId: 'authorId',
+    authorEmail: 'authorEmail',
     name: 'name',
     description: 'description',
     price: 'price'
   };
 
-  export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+  export type AdvertScalarFieldEnum = (typeof AdvertScalarFieldEnum)[keyof typeof AdvertScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3286,7 +3282,7 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
-    products?: ProductListRelationFilter
+    adverts?: AdvertListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -3294,7 +3290,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    products?: ProductOrderByRelationAggregateInput
+    adverts?: AdvertOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -3305,7 +3301,7 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
-    products?: ProductListRelationFilter
+    adverts?: AdvertListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -3330,68 +3326,68 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
   }
 
-  export type ProductWhereInput = {
-    AND?: ProductWhereInput | ProductWhereInput[]
-    OR?: ProductWhereInput[]
-    NOT?: ProductWhereInput | ProductWhereInput[]
-    id?: StringFilter<"Product"> | string
-    authorId?: IntFilter<"Product"> | number
-    name?: StringFilter<"Product"> | string
-    description?: StringFilter<"Product"> | string
-    price?: FloatFilter<"Product"> | number
+  export type AdvertWhereInput = {
+    AND?: AdvertWhereInput | AdvertWhereInput[]
+    OR?: AdvertWhereInput[]
+    NOT?: AdvertWhereInput | AdvertWhereInput[]
+    id?: StringFilter<"Advert"> | string
+    authorEmail?: StringFilter<"Advert"> | string
+    name?: StringFilter<"Advert"> | string
+    description?: StringFilter<"Advert"> | string
+    price?: FloatFilter<"Advert"> | number
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type ProductOrderByWithRelationInput = {
+  export type AdvertOrderByWithRelationInput = {
     id?: SortOrder
-    authorId?: SortOrder
+    authorEmail?: SortOrder
     name?: SortOrder
     description?: SortOrder
     price?: SortOrder
     author?: UserOrderByWithRelationInput
   }
 
-  export type ProductWhereUniqueInput = Prisma.AtLeast<{
+  export type AdvertWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: ProductWhereInput | ProductWhereInput[]
-    OR?: ProductWhereInput[]
-    NOT?: ProductWhereInput | ProductWhereInput[]
-    authorId?: IntFilter<"Product"> | number
-    name?: StringFilter<"Product"> | string
-    description?: StringFilter<"Product"> | string
-    price?: FloatFilter<"Product"> | number
+    AND?: AdvertWhereInput | AdvertWhereInput[]
+    OR?: AdvertWhereInput[]
+    NOT?: AdvertWhereInput | AdvertWhereInput[]
+    authorEmail?: StringFilter<"Advert"> | string
+    name?: StringFilter<"Advert"> | string
+    description?: StringFilter<"Advert"> | string
+    price?: FloatFilter<"Advert"> | number
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
-  export type ProductOrderByWithAggregationInput = {
+  export type AdvertOrderByWithAggregationInput = {
     id?: SortOrder
-    authorId?: SortOrder
+    authorEmail?: SortOrder
     name?: SortOrder
     description?: SortOrder
     price?: SortOrder
-    _count?: ProductCountOrderByAggregateInput
-    _avg?: ProductAvgOrderByAggregateInput
-    _max?: ProductMaxOrderByAggregateInput
-    _min?: ProductMinOrderByAggregateInput
-    _sum?: ProductSumOrderByAggregateInput
+    _count?: AdvertCountOrderByAggregateInput
+    _avg?: AdvertAvgOrderByAggregateInput
+    _max?: AdvertMaxOrderByAggregateInput
+    _min?: AdvertMinOrderByAggregateInput
+    _sum?: AdvertSumOrderByAggregateInput
   }
 
-  export type ProductScalarWhereWithAggregatesInput = {
-    AND?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
-    OR?: ProductScalarWhereWithAggregatesInput[]
-    NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Product"> | string
-    authorId?: IntWithAggregatesFilter<"Product"> | number
-    name?: StringWithAggregatesFilter<"Product"> | string
-    description?: StringWithAggregatesFilter<"Product"> | string
-    price?: FloatWithAggregatesFilter<"Product"> | number
+  export type AdvertScalarWhereWithAggregatesInput = {
+    AND?: AdvertScalarWhereWithAggregatesInput | AdvertScalarWhereWithAggregatesInput[]
+    OR?: AdvertScalarWhereWithAggregatesInput[]
+    NOT?: AdvertScalarWhereWithAggregatesInput | AdvertScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Advert"> | string
+    authorEmail?: StringWithAggregatesFilter<"Advert"> | string
+    name?: StringWithAggregatesFilter<"Advert"> | string
+    description?: StringWithAggregatesFilter<"Advert"> | string
+    price?: FloatWithAggregatesFilter<"Advert"> | number
   }
 
   export type UserCreateInput = {
     name: string
     email: string
     password: string
-    products?: ProductCreateNestedManyWithoutAuthorInput
+    adverts?: AdvertCreateNestedManyWithoutAuthorInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -3399,14 +3395,14 @@ export namespace Prisma {
     name: string
     email: string
     password: string
-    products?: ProductUncheckedCreateNestedManyWithoutAuthorInput
+    adverts?: AdvertUncheckedCreateNestedManyWithoutAuthorInput
   }
 
   export type UserUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    products?: ProductUpdateManyWithoutAuthorNestedInput
+    adverts?: AdvertUpdateManyWithoutAuthorNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -3414,7 +3410,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    products?: ProductUncheckedUpdateManyWithoutAuthorNestedInput
+    adverts?: AdvertUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -3437,56 +3433,56 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ProductCreateInput = {
+  export type AdvertCreateInput = {
     id?: string
     name: string
     description: string
     price: number
-    author: UserCreateNestedOneWithoutProductsInput
+    author: UserCreateNestedOneWithoutAdvertsInput
   }
 
-  export type ProductUncheckedCreateInput = {
+  export type AdvertUncheckedCreateInput = {
     id?: string
-    authorId: number
-    name: string
-    description: string
-    price: number
-  }
-
-  export type ProductUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    author?: UserUpdateOneRequiredWithoutProductsNestedInput
-  }
-
-  export type ProductUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    authorId?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type ProductCreateManyInput = {
-    id?: string
-    authorId: number
+    authorEmail: string
     name: string
     description: string
     price: number
   }
 
-  export type ProductUpdateManyMutationInput = {
+  export type AdvertUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: FloatFieldUpdateOperationsInput | number
+    author?: UserUpdateOneRequiredWithoutAdvertsNestedInput
+  }
+
+  export type AdvertUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    authorEmail?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type AdvertCreateManyInput = {
+    id?: string
+    authorEmail: string
+    name: string
+    description: string
+    price: number
+  }
+
+  export type AdvertUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
   }
 
-  export type ProductUncheckedUpdateManyInput = {
+  export type AdvertUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    authorId?: IntFieldUpdateOperationsInput | number
+    authorEmail?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
@@ -3518,13 +3514,13 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type ProductListRelationFilter = {
-    every?: ProductWhereInput
-    some?: ProductWhereInput
-    none?: ProductWhereInput
+  export type AdvertListRelationFilter = {
+    every?: AdvertWhereInput
+    some?: AdvertWhereInput
+    none?: AdvertWhereInput
   }
 
-  export type ProductOrderByRelationAggregateInput = {
+  export type AdvertOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -3607,37 +3603,35 @@ export namespace Prisma {
     isNot?: UserWhereInput
   }
 
-  export type ProductCountOrderByAggregateInput = {
+  export type AdvertCountOrderByAggregateInput = {
     id?: SortOrder
-    authorId?: SortOrder
+    authorEmail?: SortOrder
     name?: SortOrder
     description?: SortOrder
     price?: SortOrder
   }
 
-  export type ProductAvgOrderByAggregateInput = {
-    authorId?: SortOrder
+  export type AdvertAvgOrderByAggregateInput = {
     price?: SortOrder
   }
 
-  export type ProductMaxOrderByAggregateInput = {
+  export type AdvertMaxOrderByAggregateInput = {
     id?: SortOrder
-    authorId?: SortOrder
+    authorEmail?: SortOrder
     name?: SortOrder
     description?: SortOrder
     price?: SortOrder
   }
 
-  export type ProductMinOrderByAggregateInput = {
+  export type AdvertMinOrderByAggregateInput = {
     id?: SortOrder
-    authorId?: SortOrder
+    authorEmail?: SortOrder
     name?: SortOrder
     description?: SortOrder
     price?: SortOrder
   }
 
-  export type ProductSumOrderByAggregateInput = {
-    authorId?: SortOrder
+  export type AdvertSumOrderByAggregateInput = {
     price?: SortOrder
   }
 
@@ -3657,36 +3651,36 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type ProductCreateNestedManyWithoutAuthorInput = {
-    create?: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput> | ProductCreateWithoutAuthorInput[] | ProductUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutAuthorInput | ProductCreateOrConnectWithoutAuthorInput[]
-    createMany?: ProductCreateManyAuthorInputEnvelope
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+  export type AdvertCreateNestedManyWithoutAuthorInput = {
+    create?: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput> | AdvertCreateWithoutAuthorInput[] | AdvertUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: AdvertCreateOrConnectWithoutAuthorInput | AdvertCreateOrConnectWithoutAuthorInput[]
+    createMany?: AdvertCreateManyAuthorInputEnvelope
+    connect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
   }
 
-  export type ProductUncheckedCreateNestedManyWithoutAuthorInput = {
-    create?: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput> | ProductCreateWithoutAuthorInput[] | ProductUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutAuthorInput | ProductCreateOrConnectWithoutAuthorInput[]
-    createMany?: ProductCreateManyAuthorInputEnvelope
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+  export type AdvertUncheckedCreateNestedManyWithoutAuthorInput = {
+    create?: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput> | AdvertCreateWithoutAuthorInput[] | AdvertUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: AdvertCreateOrConnectWithoutAuthorInput | AdvertCreateOrConnectWithoutAuthorInput[]
+    createMany?: AdvertCreateManyAuthorInputEnvelope
+    connect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type ProductUpdateManyWithoutAuthorNestedInput = {
-    create?: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput> | ProductCreateWithoutAuthorInput[] | ProductUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutAuthorInput | ProductCreateOrConnectWithoutAuthorInput[]
-    upsert?: ProductUpsertWithWhereUniqueWithoutAuthorInput | ProductUpsertWithWhereUniqueWithoutAuthorInput[]
-    createMany?: ProductCreateManyAuthorInputEnvelope
-    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    update?: ProductUpdateWithWhereUniqueWithoutAuthorInput | ProductUpdateWithWhereUniqueWithoutAuthorInput[]
-    updateMany?: ProductUpdateManyWithWhereWithoutAuthorInput | ProductUpdateManyWithWhereWithoutAuthorInput[]
-    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
+  export type AdvertUpdateManyWithoutAuthorNestedInput = {
+    create?: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput> | AdvertCreateWithoutAuthorInput[] | AdvertUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: AdvertCreateOrConnectWithoutAuthorInput | AdvertCreateOrConnectWithoutAuthorInput[]
+    upsert?: AdvertUpsertWithWhereUniqueWithoutAuthorInput | AdvertUpsertWithWhereUniqueWithoutAuthorInput[]
+    createMany?: AdvertCreateManyAuthorInputEnvelope
+    set?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    disconnect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    delete?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    connect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    update?: AdvertUpdateWithWhereUniqueWithoutAuthorInput | AdvertUpdateWithWhereUniqueWithoutAuthorInput[]
+    updateMany?: AdvertUpdateManyWithWhereWithoutAuthorInput | AdvertUpdateManyWithWhereWithoutAuthorInput[]
+    deleteMany?: AdvertScalarWhereInput | AdvertScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -3697,23 +3691,23 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type ProductUncheckedUpdateManyWithoutAuthorNestedInput = {
-    create?: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput> | ProductCreateWithoutAuthorInput[] | ProductUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ProductCreateOrConnectWithoutAuthorInput | ProductCreateOrConnectWithoutAuthorInput[]
-    upsert?: ProductUpsertWithWhereUniqueWithoutAuthorInput | ProductUpsertWithWhereUniqueWithoutAuthorInput[]
-    createMany?: ProductCreateManyAuthorInputEnvelope
-    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
-    update?: ProductUpdateWithWhereUniqueWithoutAuthorInput | ProductUpdateWithWhereUniqueWithoutAuthorInput[]
-    updateMany?: ProductUpdateManyWithWhereWithoutAuthorInput | ProductUpdateManyWithWhereWithoutAuthorInput[]
-    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
+  export type AdvertUncheckedUpdateManyWithoutAuthorNestedInput = {
+    create?: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput> | AdvertCreateWithoutAuthorInput[] | AdvertUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: AdvertCreateOrConnectWithoutAuthorInput | AdvertCreateOrConnectWithoutAuthorInput[]
+    upsert?: AdvertUpsertWithWhereUniqueWithoutAuthorInput | AdvertUpsertWithWhereUniqueWithoutAuthorInput[]
+    createMany?: AdvertCreateManyAuthorInputEnvelope
+    set?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    disconnect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    delete?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    connect?: AdvertWhereUniqueInput | AdvertWhereUniqueInput[]
+    update?: AdvertUpdateWithWhereUniqueWithoutAuthorInput | AdvertUpdateWithWhereUniqueWithoutAuthorInput[]
+    updateMany?: AdvertUpdateManyWithWhereWithoutAuthorInput | AdvertUpdateManyWithWhereWithoutAuthorInput[]
+    deleteMany?: AdvertScalarWhereInput | AdvertScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutProductsInput = {
-    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
+  export type UserCreateNestedOneWithoutAdvertsInput = {
+    create?: XOR<UserCreateWithoutAdvertsInput, UserUncheckedCreateWithoutAdvertsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutAdvertsInput
     connect?: UserWhereUniqueInput
   }
 
@@ -3725,12 +3719,12 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UserUpdateOneRequiredWithoutProductsNestedInput = {
-    create?: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProductsInput
-    upsert?: UserUpsertWithoutProductsInput
+  export type UserUpdateOneRequiredWithoutAdvertsNestedInput = {
+    create?: XOR<UserCreateWithoutAdvertsInput, UserUncheckedCreateWithoutAdvertsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutAdvertsInput
+    upsert?: UserUpsertWithoutAdvertsInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProductsInput, UserUpdateWithoutProductsInput>, UserUncheckedUpdateWithoutProductsInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutAdvertsInput, UserUpdateWithoutAdvertsInput>, UserUncheckedUpdateWithoutAdvertsInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3818,121 +3812,121 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type ProductCreateWithoutAuthorInput = {
+  export type AdvertCreateWithoutAuthorInput = {
     id?: string
     name: string
     description: string
     price: number
   }
 
-  export type ProductUncheckedCreateWithoutAuthorInput = {
+  export type AdvertUncheckedCreateWithoutAuthorInput = {
     id?: string
     name: string
     description: string
     price: number
   }
 
-  export type ProductCreateOrConnectWithoutAuthorInput = {
-    where: ProductWhereUniqueInput
-    create: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput>
+  export type AdvertCreateOrConnectWithoutAuthorInput = {
+    where: AdvertWhereUniqueInput
+    create: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput>
   }
 
-  export type ProductCreateManyAuthorInputEnvelope = {
-    data: ProductCreateManyAuthorInput | ProductCreateManyAuthorInput[]
+  export type AdvertCreateManyAuthorInputEnvelope = {
+    data: AdvertCreateManyAuthorInput | AdvertCreateManyAuthorInput[]
     skipDuplicates?: boolean
   }
 
-  export type ProductUpsertWithWhereUniqueWithoutAuthorInput = {
-    where: ProductWhereUniqueInput
-    update: XOR<ProductUpdateWithoutAuthorInput, ProductUncheckedUpdateWithoutAuthorInput>
-    create: XOR<ProductCreateWithoutAuthorInput, ProductUncheckedCreateWithoutAuthorInput>
+  export type AdvertUpsertWithWhereUniqueWithoutAuthorInput = {
+    where: AdvertWhereUniqueInput
+    update: XOR<AdvertUpdateWithoutAuthorInput, AdvertUncheckedUpdateWithoutAuthorInput>
+    create: XOR<AdvertCreateWithoutAuthorInput, AdvertUncheckedCreateWithoutAuthorInput>
   }
 
-  export type ProductUpdateWithWhereUniqueWithoutAuthorInput = {
-    where: ProductWhereUniqueInput
-    data: XOR<ProductUpdateWithoutAuthorInput, ProductUncheckedUpdateWithoutAuthorInput>
+  export type AdvertUpdateWithWhereUniqueWithoutAuthorInput = {
+    where: AdvertWhereUniqueInput
+    data: XOR<AdvertUpdateWithoutAuthorInput, AdvertUncheckedUpdateWithoutAuthorInput>
   }
 
-  export type ProductUpdateManyWithWhereWithoutAuthorInput = {
-    where: ProductScalarWhereInput
-    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyWithoutAuthorInput>
+  export type AdvertUpdateManyWithWhereWithoutAuthorInput = {
+    where: AdvertScalarWhereInput
+    data: XOR<AdvertUpdateManyMutationInput, AdvertUncheckedUpdateManyWithoutAuthorInput>
   }
 
-  export type ProductScalarWhereInput = {
-    AND?: ProductScalarWhereInput | ProductScalarWhereInput[]
-    OR?: ProductScalarWhereInput[]
-    NOT?: ProductScalarWhereInput | ProductScalarWhereInput[]
-    id?: StringFilter<"Product"> | string
-    authorId?: IntFilter<"Product"> | number
-    name?: StringFilter<"Product"> | string
-    description?: StringFilter<"Product"> | string
-    price?: FloatFilter<"Product"> | number
+  export type AdvertScalarWhereInput = {
+    AND?: AdvertScalarWhereInput | AdvertScalarWhereInput[]
+    OR?: AdvertScalarWhereInput[]
+    NOT?: AdvertScalarWhereInput | AdvertScalarWhereInput[]
+    id?: StringFilter<"Advert"> | string
+    authorEmail?: StringFilter<"Advert"> | string
+    name?: StringFilter<"Advert"> | string
+    description?: StringFilter<"Advert"> | string
+    price?: FloatFilter<"Advert"> | number
   }
 
-  export type UserCreateWithoutProductsInput = {
+  export type UserCreateWithoutAdvertsInput = {
     name: string
     email: string
     password: string
   }
 
-  export type UserUncheckedCreateWithoutProductsInput = {
+  export type UserUncheckedCreateWithoutAdvertsInput = {
     id?: number
     name: string
     email: string
     password: string
   }
 
-  export type UserCreateOrConnectWithoutProductsInput = {
+  export type UserCreateOrConnectWithoutAdvertsInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+    create: XOR<UserCreateWithoutAdvertsInput, UserUncheckedCreateWithoutAdvertsInput>
   }
 
-  export type UserUpsertWithoutProductsInput = {
-    update: XOR<UserUpdateWithoutProductsInput, UserUncheckedUpdateWithoutProductsInput>
-    create: XOR<UserCreateWithoutProductsInput, UserUncheckedCreateWithoutProductsInput>
+  export type UserUpsertWithoutAdvertsInput = {
+    update: XOR<UserUpdateWithoutAdvertsInput, UserUncheckedUpdateWithoutAdvertsInput>
+    create: XOR<UserCreateWithoutAdvertsInput, UserUncheckedCreateWithoutAdvertsInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutProductsInput = {
+  export type UserUpdateToOneWithWhereWithoutAdvertsInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutProductsInput, UserUncheckedUpdateWithoutProductsInput>
+    data: XOR<UserUpdateWithoutAdvertsInput, UserUncheckedUpdateWithoutAdvertsInput>
   }
 
-  export type UserUpdateWithoutProductsInput = {
+  export type UserUpdateWithoutAdvertsInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type UserUncheckedUpdateWithoutProductsInput = {
+  export type UserUncheckedUpdateWithoutAdvertsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ProductCreateManyAuthorInput = {
+  export type AdvertCreateManyAuthorInput = {
     id?: string
     name: string
     description: string
     price: number
   }
 
-  export type ProductUpdateWithoutAuthorInput = {
+  export type AdvertUpdateWithoutAuthorInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
   }
 
-  export type ProductUncheckedUpdateWithoutAuthorInput = {
+  export type AdvertUncheckedUpdateWithoutAuthorInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
   }
 
-  export type ProductUncheckedUpdateManyWithoutAuthorInput = {
+  export type AdvertUncheckedUpdateManyWithoutAuthorInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string

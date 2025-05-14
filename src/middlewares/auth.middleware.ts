@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils/hooks/jsonwebtoken";
 import { getUserById } from "../models/auth.model";
+import { getAdvertById } from "../models/advert.model";
 
 export const authMiddleware = async (
   req: Request,
@@ -24,7 +25,13 @@ export const authMiddleware = async (
     return res.status(401).json({ message: "User not found" });
   }
 
-  (req as any).user = user;
+  const newUser = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+  };
+
+  (req as any).user = newUser;
 
   next();
 };

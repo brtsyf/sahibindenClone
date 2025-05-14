@@ -16,18 +16,18 @@ datasource db {
 }
 
 model User {
-  id       Int       @id @default(autoincrement())
+  id       Int      @id @default(autoincrement())
   name     String
-  email    String    @unique
+  email    String   @unique
   password String
-  products Product[]
+  adverts  Advert[]
 }
 
-model Product {
+model Advert {
   id          String @id @default(uuid())
-  authorId    Int
+  authorEmail String
   name        String
   description String
   price       Float
-  author      User   @relation(fields: [authorId], references: [id])
+  author      User   @relation(fields: [authorEmail], references: [email])
 }
