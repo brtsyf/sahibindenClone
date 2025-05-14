@@ -1,20 +1,20 @@
-# Base image olarak resmi Node imajı kullanılır
+# Base image olarak Node 18 kullan
 FROM node:18
 
-# Konteynerin içinde çalışılacak klasör
+# Konteyner içinde çalışma dizini
 WORKDIR /src
 
-# package.json ve package-lock.json dosyalarını kopyala
+# Sadece bağımlılık dosyalarını kopyala
 COPY package*.json ./
 
 # Bağımlılıkları yükle
 RUN npm install
 
-# Uygulama dosyalarını kopyala
+# Tüm dosyaları kopyala
 COPY . .
 
-# Uygulama hangi portu dinliyorsa onu belirt
+# Portu dışa aç (uygulamanın dinlediği port)
 EXPOSE 3000
 
 # Uygulamayı başlat
-CMD ["npm", "run","dev"]
+CMD ["npm", "run", "dev"]
