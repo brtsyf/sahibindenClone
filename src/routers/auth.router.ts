@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { validateSchema } from "../middlewares/validateSchema.ts";
-import { loginSchema, registerSchema } from "../schema/auth.schema.ts";
+import { validateSchema } from "../middlewares/validateSchema";
+import { loginSchema, registerSchema } from "../schema/auth.schema";
 import {
   loginController,
   logoutController,
   refreshTokenController,
   registerController,
-} from "../controllers/auth.controller.ts";
+} from "../controllers/auth.controller";
 
 const router = Router();
 
