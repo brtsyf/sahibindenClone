@@ -1,27 +1,21 @@
-# Node 18 imajını kullan
+# Node image
 FROM node:18
 
-# Uygulama çalışma dizini
 WORKDIR /src
 
-# package.json ve lock dosyasını kopyala
-COPY package*.json ./
-
 # Bağımlılıkları yükle
+COPY package*.json ./
 RUN npm install
 
-# Kod ve Prisma dosyalarını kopyala
+# Kodları kopyala
 COPY . .
 COPY prisma ./prisma
 
-# Prisma Client'ı oluştur
+# Prisma client'ı oluştur
 RUN npx prisma generate
 
-# Migration'ları uygula (TABLOLARI OLUŞTURUR)
-RUN npx prisma migrate deploy
-
-# Portu aç
+# Uygulamanın portu
 EXPOSE 3000
 
-# Uygulamayı başlat
-CMD ["npm", "run", "dev"]
+# Production başlatma: migrate + dev çalıştırma
+CMD npx prisma migrate deploy && npm run dev
