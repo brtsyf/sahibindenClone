@@ -10,8 +10,11 @@ COPY package*.json ./
 # Bağımlılıkları yükle
 RUN npm install
 
+
 # Tüm dosyaları kopyala
 COPY . .
+
+RUN npx prisma migrate deploy
 
 # Portu dışa aç (uygulamanın dinlediği port)
 EXPOSE 3000
