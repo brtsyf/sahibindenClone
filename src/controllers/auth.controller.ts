@@ -118,3 +118,12 @@ export const refreshTokenController = async (
 
   return res.status(200).json({ message: "Refresh token successful" });
 };
+
+export const meController = async (
+  req: Request,
+  res: Response
+): Promise<any> => {
+  return res
+    .status(200)
+    .json({ message: "Me successful", user: (req as any).user });
+};
