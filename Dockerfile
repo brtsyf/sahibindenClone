@@ -14,6 +14,10 @@ RUN npm install
 # Tüm dosyaları kopyala
 COPY . .
 
+# Prisma Client'ı oluştur
+RUN npx prisma generate
+
+# Prisma migration'ı uygulamak için
 RUN npx prisma migrate deploy
 
 # Portu dışa aç (uygulamanın dinlediği port)
