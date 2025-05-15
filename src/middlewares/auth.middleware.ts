@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils/hooks/jsonwebtoken";
 import { getUserById } from "../models/auth.model";
-import { getAdvertById } from "../models/advert.model";
 
 export const authMiddleware = async (
   req: Request,

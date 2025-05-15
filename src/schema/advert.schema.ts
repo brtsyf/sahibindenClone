@@ -4,4 +4,21 @@ export const createAdvertSchema = z.object({
   name: z.string().min(1),
   description: z.string().min(1),
   price: z.number().min(0),
+  categoryId: z.number().default(1),
 });
+
+export const updateAdvertSchema = z
+  .object({
+    name: z.string().min(1).optional(),
+    description: z.string().min(1).optional(),
+    price: z.number().min(0).optional(),
+  })
+  .refine(
+    (data) => {
+      // Check if at least one field is provided
+      return Object.keys(data).length > 0;
+    },
+    {
+      message: "At least one field must be provided for update",
+    }
+  );

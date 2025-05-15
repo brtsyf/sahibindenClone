@@ -24,10 +24,18 @@ model User {
 }
 
 model Advert {
-  id          String @id @default(uuid())
+  id          String   @id @default(uuid())
   authorEmail String
   name        String
   description String
   price       Float
-  author      User   @relation(fields: [authorEmail], references: [email])
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id])
+  author      User     @relation(fields: [authorEmail], references: [email])
+}
+
+model Category {
+  id      Int      @id @default(autoincrement())
+  name    String
+  adverts Advert[]
 }

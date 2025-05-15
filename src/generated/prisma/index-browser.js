@@ -132,7 +132,13 @@ exports.Prisma.AdvertScalarFieldEnum = {
   authorEmail: 'authorEmail',
   name: 'name',
   description: 'description',
-  price: 'price'
+  price: 'price',
+  categoryId: 'categoryId'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
 };
 
 exports.Prisma.SortOrder = {
@@ -148,7 +154,8 @@ exports.Prisma.QueryMode = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Advert: 'Advert'
+  Advert: 'Advert',
+  Category: 'Category'
 };
 
 /**

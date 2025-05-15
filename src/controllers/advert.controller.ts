@@ -12,13 +12,14 @@ export const createAdvertController = async (
   req: Request,
   res: Response
 ): Promise<any> => {
-  const { name, description, price } = req.body;
+  const { name, description, price, categoryId } = req.body;
 
   const advert = await createAdvert({
     authorEmail: (req as any).user.email,
     name,
     description,
     price,
+    categoryId: categoryId,
   });
 
   return res.status(201).json({ message: "Create advert successful", advert });

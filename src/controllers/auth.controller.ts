@@ -1,7 +1,13 @@
 import { Request, Response } from "express";
 import { comparePassword, hashPassword } from "../utils/hooks/bycrpt";
-import { createUser, findExitUser, getUserById } from "../models/auth.model";
+import {
+  createUser,
+  findExitUser,
+  getUserById,
+  updateUser,
+} from "../models/auth.model";
 import { generateToken, verifyToken } from "../utils/hooks/jsonwebtoken";
+import { withoutPassword } from "../utils/hooks/withoutPassword";
 
 export const registerController = async (
   req: Request,
@@ -33,9 +39,10 @@ export const registerController = async (
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
+  const userWithoutPassword = withoutPassword(newUser);
   return res
     .status(201)
-    .json({ message: "User created successfully", user: newUser });
+    .json({ message: "User created successfully", user: userWithoutPassword });
 };
 
 export const loginController = async (
@@ -68,8 +75,11 @@ export const loginController = async (
     httpOnly: true,
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
+  const userWithoutPassword = withoutPassword(user);
 
-  return res.status(200).json({ message: "Login successful", user });
+  return res
+    .status(200)
+    .json({ message: "Login successful", userWithoutPassword });
 };
 
 export const logoutController = async (
@@ -126,4 +136,17 @@ export const meController = async (
   return res
     .status(200)
     .json({ message: "Me successful", user: (req as any).user });
+};
+
+export const updateController = async (
+  req: Request,
+  res: Response
+): Promise<any> => {
+  const { name } = req.body;
+  const updatedUser = await updateUser((req as any).user.id, name);
+
+  const userWithoutPassword = withoutPassword(updatedUser);
+  return res
+    .status(200)
+    .json({ message: "Update successful", user: userWithoutPassword });
 };

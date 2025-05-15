@@ -29,6 +29,13 @@ model Advert {
   name        String
   description String
   price       Float
+  categoryId  Int 
+  category    Category @relation(fields: [categoryId] , references: [id])
   author      User   @relation(fields: [authorEmail], references: [email])
 }
 
+model Category {
+  id   Int   @id @default(autoincrement())
+  name String
+  adverts Advert[]
+}
