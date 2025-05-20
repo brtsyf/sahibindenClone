@@ -3,8 +3,8 @@ import { z } from "zod";
 export const createAdvertSchema = z.object({
   name: z.string().min(1),
   description: z.string().min(1),
-  price: z.number().min(0),
-  categoryId: z.number().default(1),
+  price: z.string().min(0),
+  categoryId: z.string().default("1"),
 });
 
 export const updateAdvertSchema = z

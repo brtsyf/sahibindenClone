@@ -7,20 +7,23 @@ export const createAdvert = async ({
   description,
   price,
   categoryId,
+  image,
 }: {
   authorEmail: string;
   name: string;
   description: string;
-  price: number;
-  categoryId: number;
+  price: string;
+  categoryId: string;
+  image: string;
 }) => {
   const advert = await prisma.advert.create({
     data: {
       authorEmail,
       name,
       description,
-      price,
-      categoryId,
+      price: Number(price),
+      categoryId: Number(categoryId || 1),
+      image,
     },
   });
   return advert;

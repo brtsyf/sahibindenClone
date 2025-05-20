@@ -124,7 +124,8 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
-  password: 'password'
+  password: 'password',
+  image: 'image'
 };
 
 exports.Prisma.AdvertScalarFieldEnum = {
@@ -133,7 +134,8 @@ exports.Prisma.AdvertScalarFieldEnum = {
   name: 'name',
   description: 'description',
   price: 'price',
-  categoryId: 'categoryId'
+  categoryId: 'categoryId',
+  image: 'image'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {

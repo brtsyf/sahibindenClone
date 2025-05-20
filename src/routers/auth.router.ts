@@ -14,6 +14,8 @@ import {
   updateController,
 } from "../controllers/auth.controller";
 import { authMiddleware } from "../middlewares/auth.middleware";
+import { userParser } from "../utils/hooks/cloudinary";
+import { updateAndValidateSchema } from "../middlewares/updateAndValidateSchema.middleware";
 
 const router = Router();
 
@@ -112,7 +114,8 @@ router.post("/login", validateSchema(loginSchema), loginController);
 router.post(
   "/update",
   authMiddleware,
-  validateSchema(updateUserSchema),
+  userParser.single("image"),
+  updateAndValidateSchema(updateUserSchema),
   updateController
 );
 

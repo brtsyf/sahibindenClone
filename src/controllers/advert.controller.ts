@@ -14,12 +14,15 @@ export const createAdvertController = async (
 ): Promise<any> => {
   const { name, description, price, categoryId } = req.body;
 
+  console.log(req.file);
+
   const advert = await createAdvert({
     authorEmail: (req as any).user.email,
     name,
     description,
     price,
     categoryId: categoryId,
+    image: req.file?.path as string,
   });
 
   return res.status(201).json({ message: "Create advert successful", advert });

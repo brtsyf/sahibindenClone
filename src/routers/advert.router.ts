@@ -12,6 +12,7 @@ import {
   updateAdvertSchema,
 } from "../schema/advert.schema";
 import { advertPermissionMiddleware } from "../middlewares/advertPermission.middleware";
+import { parser } from "../utils/hooks/cloudinary";
 
 const router = Router();
 
@@ -58,6 +59,7 @@ const router = Router();
  */
 router.post(
   "/create",
+  parser.single("image"),
   validateSchema(createAdvertSchema),
   createAdvertController
 );

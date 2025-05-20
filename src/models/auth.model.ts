@@ -13,7 +13,12 @@ export const createUser = async (
   password: string
 ) => {
   const user = await prisma.user.create({
-    data: { name, email, password },
+    data: {
+      name,
+      email,
+      password,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=default",
+    },
   });
   return user;
 };
@@ -25,10 +30,10 @@ export const getUserById = async (id: number) => {
   return user;
 };
 
-export const updateUser = async (id: number, name: string) => {
+export const updateUser = async (id: number, name: string, image: string) => {
   const user = await prisma.user.update({
     where: { id },
-    data: { name },
+    data: { name, image },
   });
   return user;
 };

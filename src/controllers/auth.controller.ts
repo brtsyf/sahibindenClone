@@ -143,7 +143,13 @@ export const updateController = async (
   res: Response
 ): Promise<any> => {
   const { name } = req.body;
-  const updatedUser = await updateUser((req as any).user.id, name);
+  const image = req.file?.path as string;
+  console.log(image);
+  const updatedUser = await updateUser(
+    (req as any).user.id,
+    name,
+    req.file?.path as string
+  );
 
   const userWithoutPassword = withoutPassword(updatedUser);
   return res

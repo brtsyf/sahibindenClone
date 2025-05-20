@@ -20,6 +20,7 @@ model User {
   name     String
   email    String   @unique
   password String
+  image    String   
   adverts  Advert[] 
 }
 
@@ -29,10 +30,13 @@ model Advert {
   name        String
   description String
   price       Float
-  categoryId  Int 
+  categoryId  Int
+  image       String
   category    Category @relation(fields: [categoryId] , references: [id])
   author      User   @relation(fields: [authorEmail], references: [email])
 }
+
+
 
 model Category {
   id   Int   @id @default(autoincrement())

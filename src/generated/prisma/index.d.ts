@@ -1137,6 +1137,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     password: string | null
+    image: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1144,6 +1145,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     password: string | null
+    image: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1151,6 +1153,7 @@ export namespace Prisma {
     name: number
     email: number
     password: number
+    image: number
     _all: number
   }
 
@@ -1168,6 +1171,7 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    image?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1175,6 +1179,7 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    image?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1182,6 +1187,7 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    image?: true
     _all?: true
   }
 
@@ -1276,6 +1282,7 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1302,6 +1309,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    image?: boolean
     adverts?: boolean | User$advertsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
@@ -1311,6 +1319,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    image?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1318,6 +1327,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    image?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1325,9 +1335,10 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    image?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "image", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     adverts?: boolean | User$advertsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -1345,6 +1356,7 @@ export namespace Prisma {
       name: string
       email: string
       password: string
+      image: string
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1773,6 +1785,7 @@ export namespace Prisma {
     readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
+    readonly image: FieldRef<"User", 'String'>
   }
     
 
@@ -2232,6 +2245,7 @@ export namespace Prisma {
     description: string | null
     price: number | null
     categoryId: number | null
+    image: string | null
   }
 
   export type AdvertMaxAggregateOutputType = {
@@ -2241,6 +2255,7 @@ export namespace Prisma {
     description: string | null
     price: number | null
     categoryId: number | null
+    image: string | null
   }
 
   export type AdvertCountAggregateOutputType = {
@@ -2250,6 +2265,7 @@ export namespace Prisma {
     description: number
     price: number
     categoryId: number
+    image: number
     _all: number
   }
 
@@ -2271,6 +2287,7 @@ export namespace Prisma {
     description?: true
     price?: true
     categoryId?: true
+    image?: true
   }
 
   export type AdvertMaxAggregateInputType = {
@@ -2280,6 +2297,7 @@ export namespace Prisma {
     description?: true
     price?: true
     categoryId?: true
+    image?: true
   }
 
   export type AdvertCountAggregateInputType = {
@@ -2289,6 +2307,7 @@ export namespace Prisma {
     description?: true
     price?: true
     categoryId?: true
+    image?: true
     _all?: true
   }
 
@@ -2385,6 +2404,7 @@ export namespace Prisma {
     description: string
     price: number
     categoryId: number
+    image: string
     _count: AdvertCountAggregateOutputType | null
     _avg: AdvertAvgAggregateOutputType | null
     _sum: AdvertSumAggregateOutputType | null
@@ -2413,6 +2433,7 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     categoryId?: boolean
+    image?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["advert"]>
@@ -2424,6 +2445,7 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     categoryId?: boolean
+    image?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["advert"]>
@@ -2435,6 +2457,7 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     categoryId?: boolean
+    image?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["advert"]>
@@ -2446,9 +2469,10 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     categoryId?: boolean
+    image?: boolean
   }
 
-  export type AdvertOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "authorEmail" | "name" | "description" | "price" | "categoryId", ExtArgs["result"]["advert"]>
+  export type AdvertOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "authorEmail" | "name" | "description" | "price" | "categoryId" | "image", ExtArgs["result"]["advert"]>
   export type AdvertInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | CategoryDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
@@ -2475,6 +2499,7 @@ export namespace Prisma {
       description: string
       price: number
       categoryId: number
+      image: string
     }, ExtArgs["result"]["advert"]>
     composites: {}
   }
@@ -2906,6 +2931,7 @@ export namespace Prisma {
     readonly description: FieldRef<"Advert", 'String'>
     readonly price: FieldRef<"Advert", 'Float'>
     readonly categoryId: FieldRef<"Advert", 'Int'>
+    readonly image: FieldRef<"Advert", 'String'>
   }
     
 
@@ -4403,7 +4429,8 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     email: 'email',
-    password: 'password'
+    password: 'password',
+    image: 'image'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -4415,7 +4442,8 @@ export namespace Prisma {
     name: 'name',
     description: 'description',
     price: 'price',
-    categoryId: 'categoryId'
+    categoryId: 'categoryId',
+    image: 'image'
   };
 
   export type AdvertScalarFieldEnum = (typeof AdvertScalarFieldEnum)[keyof typeof AdvertScalarFieldEnum]
@@ -4503,6 +4531,7 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    image?: StringFilter<"User"> | string
     adverts?: AdvertListRelationFilter
   }
 
@@ -4511,6 +4540,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    image?: SortOrder
     adverts?: AdvertOrderByRelationAggregateInput
   }
 
@@ -4522,6 +4552,7 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    image?: StringFilter<"User"> | string
     adverts?: AdvertListRelationFilter
   }, "id" | "email">
 
@@ -4530,6 +4561,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    image?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -4545,6 +4577,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
+    image?: StringWithAggregatesFilter<"User"> | string
   }
 
   export type AdvertWhereInput = {
@@ -4557,6 +4590,7 @@ export namespace Prisma {
     description?: StringFilter<"Advert"> | string
     price?: FloatFilter<"Advert"> | number
     categoryId?: IntFilter<"Advert"> | number
+    image?: StringFilter<"Advert"> | string
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -4568,6 +4602,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     categoryId?: SortOrder
+    image?: SortOrder
     category?: CategoryOrderByWithRelationInput
     author?: UserOrderByWithRelationInput
   }
@@ -4582,6 +4617,7 @@ export namespace Prisma {
     description?: StringFilter<"Advert"> | string
     price?: FloatFilter<"Advert"> | number
     categoryId?: IntFilter<"Advert"> | number
+    image?: StringFilter<"Advert"> | string
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
@@ -4593,6 +4629,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     categoryId?: SortOrder
+    image?: SortOrder
     _count?: AdvertCountOrderByAggregateInput
     _avg?: AdvertAvgOrderByAggregateInput
     _max?: AdvertMaxOrderByAggregateInput
@@ -4610,6 +4647,7 @@ export namespace Prisma {
     description?: StringWithAggregatesFilter<"Advert"> | string
     price?: FloatWithAggregatesFilter<"Advert"> | number
     categoryId?: IntWithAggregatesFilter<"Advert"> | number
+    image?: StringWithAggregatesFilter<"Advert"> | string
   }
 
   export type CategoryWhereInput = {
@@ -4658,6 +4696,7 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
     adverts?: AdvertCreateNestedManyWithoutAuthorInput
   }
 
@@ -4666,6 +4705,7 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
     adverts?: AdvertUncheckedCreateNestedManyWithoutAuthorInput
   }
 
@@ -4673,6 +4713,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     adverts?: AdvertUpdateManyWithoutAuthorNestedInput
   }
 
@@ -4681,6 +4722,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     adverts?: AdvertUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
@@ -4689,12 +4731,14 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
   }
 
   export type UserUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -4702,6 +4746,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertCreateInput = {
@@ -4709,6 +4754,7 @@ export namespace Prisma {
     name: string
     description: string
     price: number
+    image: string
     category: CategoryCreateNestedOneWithoutAdvertsInput
     author: UserCreateNestedOneWithoutAdvertsInput
   }
@@ -4720,6 +4766,7 @@ export namespace Prisma {
     description: string
     price: number
     categoryId: number
+    image: string
   }
 
   export type AdvertUpdateInput = {
@@ -4727,6 +4774,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
     category?: CategoryUpdateOneRequiredWithoutAdvertsNestedInput
     author?: UserUpdateOneRequiredWithoutAdvertsNestedInput
   }
@@ -4738,6 +4786,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
     categoryId?: IntFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertCreateManyInput = {
@@ -4747,6 +4796,7 @@ export namespace Prisma {
     description: string
     price: number
     categoryId: number
+    image: string
   }
 
   export type AdvertUpdateManyMutationInput = {
@@ -4754,6 +4804,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertUncheckedUpdateManyInput = {
@@ -4763,6 +4814,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
     categoryId?: IntFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryCreateInput = {
@@ -4842,6 +4894,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    image?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -4853,6 +4906,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    image?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -4860,6 +4914,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    image?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -4928,6 +4983,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     categoryId?: SortOrder
+    image?: SortOrder
   }
 
   export type AdvertAvgOrderByAggregateInput = {
@@ -4942,6 +4998,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     categoryId?: SortOrder
+    image?: SortOrder
   }
 
   export type AdvertMinOrderByAggregateInput = {
@@ -4951,6 +5008,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     categoryId?: SortOrder
+    image?: SortOrder
   }
 
   export type AdvertSumOrderByAggregateInput = {
@@ -5219,6 +5277,7 @@ export namespace Prisma {
     name: string
     description: string
     price: number
+    image: string
     category: CategoryCreateNestedOneWithoutAdvertsInput
   }
 
@@ -5228,6 +5287,7 @@ export namespace Prisma {
     description: string
     price: number
     categoryId: number
+    image: string
   }
 
   export type AdvertCreateOrConnectWithoutAuthorInput = {
@@ -5266,6 +5326,7 @@ export namespace Prisma {
     description?: StringFilter<"Advert"> | string
     price?: FloatFilter<"Advert"> | number
     categoryId?: IntFilter<"Advert"> | number
+    image?: StringFilter<"Advert"> | string
   }
 
   export type CategoryCreateWithoutAdvertsInput = {
@@ -5286,6 +5347,7 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
   }
 
   export type UserUncheckedCreateWithoutAdvertsInput = {
@@ -5293,6 +5355,7 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    image: string
   }
 
   export type UserCreateOrConnectWithoutAdvertsInput = {
@@ -5335,6 +5398,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateWithoutAdvertsInput = {
@@ -5342,6 +5406,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertCreateWithoutCategoryInput = {
@@ -5349,6 +5414,7 @@ export namespace Prisma {
     name: string
     description: string
     price: number
+    image: string
     author: UserCreateNestedOneWithoutAdvertsInput
   }
 
@@ -5358,6 +5424,7 @@ export namespace Prisma {
     name: string
     description: string
     price: number
+    image: string
   }
 
   export type AdvertCreateOrConnectWithoutCategoryInput = {
@@ -5392,6 +5459,7 @@ export namespace Prisma {
     description: string
     price: number
     categoryId: number
+    image: string
   }
 
   export type AdvertUpdateWithoutAuthorInput = {
@@ -5399,6 +5467,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
     category?: CategoryUpdateOneRequiredWithoutAdvertsNestedInput
   }
 
@@ -5408,6 +5477,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
     categoryId?: IntFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertUncheckedUpdateManyWithoutAuthorInput = {
@@ -5416,6 +5486,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
     categoryId?: IntFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertCreateManyCategoryInput = {
@@ -5424,6 +5495,7 @@ export namespace Prisma {
     name: string
     description: string
     price: number
+    image: string
   }
 
   export type AdvertUpdateWithoutCategoryInput = {
@@ -5431,6 +5503,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
     author?: UserUpdateOneRequiredWithoutAdvertsNestedInput
   }
 
@@ -5440,6 +5513,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
   export type AdvertUncheckedUpdateManyWithoutCategoryInput = {
@@ -5448,6 +5522,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
   }
 
 

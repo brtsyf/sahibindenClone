@@ -14,6 +14,7 @@ export const loginSchema = z.object({
 export const updateUserSchema = z
   .object({
     name: z.string().min(1).optional(),
+    image: z.string().optional(),
   })
   .refine(
     (data) => {
