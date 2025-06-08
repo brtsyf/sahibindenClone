@@ -128,6 +128,12 @@ exports.Prisma.UserScalarFieldEnum = {
   image: 'image'
 };
 
+exports.Prisma.ChatScalarFieldEnum = {
+  id: 'id',
+  seller_id: 'seller_id',
+  receiver_id: 'receiver_id'
+};
+
 exports.Prisma.AdvertScalarFieldEnum = {
   id: 'id',
   authorEmail: 'authorEmail',
@@ -156,6 +162,7 @@ exports.Prisma.QueryMode = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Chat: 'Chat',
   Advert: 'Advert',
   Category: 'Category'
 };

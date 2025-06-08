@@ -16,12 +16,22 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String   @unique
-  password String
-  image    String
-  adverts  Advert[]
+  id            Int      @id @default(autoincrement())
+  name          String
+  email         String   @unique
+  password      String
+  image         String
+  adverts       Advert[]
+  sellerChats   Chat[]   @relation("SellerChat")
+  receiverChats Chat[]   @relation("ReceiverChat")
+}
+
+model Chat {
+  id          String @id @default(uuid())
+  seller_id   Int
+  receiver_id Int
+  seller      User   @relation("SellerChat", fields: [seller_id], references: [id])
+  receiver    User   @relation("ReceiverChat", fields: [receiver_id], references: [id])
 }
 
 model Advert {

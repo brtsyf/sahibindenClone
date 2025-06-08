@@ -59,7 +59,7 @@ const router = Router();
  */
 router.post(
   "/create",
-  parser.single("image"),
+  parser.array("image"),
   validateSchema(createAdvertSchema),
   createAdvertController
 );
@@ -165,6 +165,7 @@ router.get("/:id", detailAdvertController);
 router.put(
   "/:id/update",
   advertPermissionMiddleware,
+  parser.array("image"),
   validateSchema(updateAdvertSchema),
   updateAdvertController
 );

@@ -21,7 +21,17 @@ model User {
   email    String   @unique
   password String
   image    String   
-  adverts  Advert[] 
+  adverts  Advert[]
+  sellerChats    Chat[] @relation("SellerChat")
+  receiverChats  Chat[] @relation("ReceiverChat")
+}
+
+model Chat {
+  id          String @id @default(uuid())
+  seller_id   Int
+  receiver_id Int
+  seller      User @relation("SellerChat", fields: [seller_id], references: [id])
+  receiver    User @relation("ReceiverChat", fields: [receiver_id], references: [id])
 }
 
 model Advert {
@@ -35,8 +45,6 @@ model Advert {
   category    Category @relation(fields: [categoryId] , references: [id])
   author      User   @relation(fields: [authorEmail], references: [email])
 }
-
-
 
 model Category {
   id   Int   @id @default(autoincrement())

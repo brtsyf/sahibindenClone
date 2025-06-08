@@ -4,8 +4,11 @@ import cors from "cors";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
-import swaggerUi, { SwaggerOptions } from "swagger-ui-express";
+import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
+import { createServer } from "node:http";
+import { Server } from "socket.io";
+
 //Routers
 import authRouter from "./routers/auth.router";
 import advertRouter from "./routers/advert.router";
@@ -14,10 +17,9 @@ const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "SahibindenClone API",
+      title: "SellEverything API",
       version: "1.0.0",
-      description:
-        "A RESTful API for a classified advertisements platform similar to Sahibinden",
+      description: "A RESTful API for eCommerce",
       contact: {
         name: "API Support",
       },
@@ -60,6 +62,10 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions);
 dotenv.config();
 
 const app = express();
+const server = createServer(app);
+export const io = new Server(server, {
+  // options
+});
 
 //Middlewares
 import { authMiddleware } from "./middlewares/auth.middleware";
@@ -72,10 +78,10 @@ app.use(helmet());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.use("/api/auth", authRouter);
+app.use("/api/", authRouter);
 app.use("/api/adverts", authMiddleware, advertRouter);
 
-app.listen(3000, () => {
+server.listen(3000, () => {
   console.log("Server is running on port 3000");
   console.log("http://localhost:3000/api-docs");
 });
